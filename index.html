@@ -108,6 +108,36 @@
         h2, h3, h4 {
             color: #333;
         }
+
+        section#galeria {
+            width: 90%;
+            margin: 80px auto;
+            text-align: center;
+        }
+
+            section#galeria h2 {
+                margin-bottom: 20px;
+                color: #333;
+            }
+
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+            .galeria img {
+                width: 200px;
+                height: auto;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+            }
+
+                .galeria img:hover {
+                    transform: scale(1.05);
+                }
     </style>
 </head>
 <body>
@@ -123,15 +153,17 @@
         </ul>
     </nav>
 
-   
+
     <section id="omne" style="padding-top: 100px; width: 60%; text-align: center; margin: 100px auto 50px auto;">
         <h2>
             Moje služby
         </h2>
         <div>
             <p>Som IT nadšenec, s vášňou pre technológie a inovácie.</p>
-            <p>
-                Mojou misiou je poskytovať kvalitné a spoľahlivé IT služby, ktoré pomáhajú klientom dosiahnuť ich ciele. Špecializujem sa na inštaláciu a konfiguráciu operačných systémov, kybernetickú bezpečnosť a moderné 3D tlačové technológie. Ku každému projektu pristupujem individuálne s dôrazom na kvalitu a spokojenosť zákazníka.
+            <p style="text-align: justify;">
+                Mojou misiou je poskytovať kvalitné a spoľahlivé IT služby, ktoré pomáhajú klientom dosiahnuť ich ciele.
+                Špecializujem sa na inštaláciu a konfiguráciu operačných systémov, kybernetickú bezpečnosť a moderné 3D tlačové technológie.
+                Ku každému projektu pristupujem individuálne s dôrazom na kvalitu a spokojnosť zákazníka.
             </p>
         </div>
     </section><br />
@@ -165,13 +197,23 @@
             <h3>3D tlač</h3>
             <h4>Profesionálna 3D tlač prototypov, náhradných dielov a custom projektov s vysokou presnosťou</h4>
             <ul>
-                <li>Tlač plastových aj kovových dielov</li>
-                <li>3D modelovanie podľa zadania</li>
-                <li>Rýchla prototypizácia</li>
+                <li>Tlač plastových dielov z PLA, PETG, ABS</li>
+                <li>Vytlačenie podľa Vášho modelu alebo z internetu</li>
+                <li>Rýchle dodanie pre materiály na sklade</li>
                 <li>Individuálne konzultácie</li>
             </ul>
         </div>
     </div>
+
+    <section id="galeria">
+        <h2>Galéria 3D výtlačkov</h2>
+        <div class="galeria">
+            <img src="images/vazy.jpg" alt="3D model - vázy">
+            <img src="images/3Dfoto.jpg" alt="3D model - 3D foto">
+            <img src="images/hracky.jpg" alt="3D model - hračky">
+            <img src="images/napis.jpg" alt="3D model - nápis">
+        </div>
+    </section>
 
     <!-- Kontakt -->
     <section id="kontakt">
