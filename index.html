@@ -1,33 +1,72 @@
-<!DOCTYPE HTML>
-<html lang="sk">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <title>Vitaj na tenejto stránke</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <style>
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 80px;
-        }
+  <meta charset="UTF-8">
+  <title>Pozdrav podľa jazyka</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #e3f2fd, #fff);
+      font-family: "Segoe UI", Roboto, sans-serif;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: #333;
+      text-align: center;
+      overflow: hidden;
+    }
 
-        body {
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-    </style>
+    #greeting {
+      font-size: 2rem;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1.5s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    small {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
 </head>
 <body>
+  <h1 id="greeting"></h1>
+  <small id="langInfo"></small>
 
-        <h2>
-            Vitaj na tejto stránke.
-        </h2>
-        <div>
-            <p>Prajem Ti pekný deň</p>
-        </div>
-    <br />
+  <script>
+    // Zisti jazyk prehliadača (napr. "sk", "en-US")
+    const lang = navigator.language || navigator.userLanguage;
+    const shortLang = lang.split('-')[0];
+
+    // Slovník pozdravov
+    const greetings = {
+      sk: "Ahoj, Prajem ti krásny deň.",
+      cs: "Ahoj, Přeji ti krásný den.",
+      en: "Hello, I wish you a wonderful day.",
+      de: "Hallo, ich wünsche dir einen schönen Tag.",
+      sv: "Hej, jag önskar dig en underbar dag.",
+      fr: "Salut, je te souhaite une belle journée.",
+      es: "Hola, te deseo un hermoso día.",
+      it: "Ciao, ti auguro una splendida giornata."
+    };
+
+    // Zvoľ správny jazyk alebo fallback na EN
+    const message = greetings[shortLang] || greetings["en"];
+
+    // Zobraz text
+    document.getElementById("greeting").innerText = message;
+    document.getElementById("langInfo").innerText = `Detected language: ${lang}`;
+  </script>
 </body>
 </html>
-
